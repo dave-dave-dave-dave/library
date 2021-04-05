@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Random;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -16,8 +15,8 @@ import java.util.UUID;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(unique = true)
     private String isbn = generateIsbn();
